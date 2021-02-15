@@ -1,0 +1,17 @@
+<%- include('partials/header') %> 
+
+<h1> Home </h1>
+<p> <%= homeStartingContent %>  </p>
+
+<% homeContent.forEach((content) => { %>
+    <% let postLink =  content.postLink %> 
+
+    <h1><%= content.title %> </h1>
+    <p>
+        <%= content.body.substring(0, 100) + ' ...' %>
+        <a href='/posts/<%= content.title %>'>Read More</a>
+    </p>
+
+<% }) %> 
+
+<%- include('partials/footer') %> 
